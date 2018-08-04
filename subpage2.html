@@ -1,0 +1,92 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登录注册页面</title>
+	<link rel="stylesheet" type="text/css" href="css/subpage2.css">
+</head>
+<body>
+	<div class="header">
+		<div class="header_1">
+			<div class="left">
+				<a href="http://cloud.qingchengfit.cn/">
+					<img src="img3/4.png">
+					<span>返回首页</span>
+				</a>
+
+			</div>
+			<div class="center">
+				<div class="center_top">
+					<div class="title">
+						<img src="img3/2.png">
+					</div>
+					<div class="content">
+						<h2>登录账户</h2>
+						<form action="#" method="post">
+							<input name="username" id="username" class="content_input" type="text" placeholder="用户名"><br/>
+							<input name="userpass" id="userpass" class="content_input" type="password" placeholder="密码"><br/>
+						
+							<label>
+									<input class="click" type="checkbox"  id="cookiespan">
+									<span class="click_wz" >7天免登陆</span>
+							</label>
+							<a href="http://cloud.qingchengfit.cn/backend/reset"><span class="click_wz2">忘记密码?</span></a>
+							<span id="userspan_3" style="margin-left:15px;font-size: 12px;"></span>
+							<input class="content_submit" type="button" value="登录">
+							
+						</form>
+						<a  class="login" href="subpage3.html">注册</a>
+						
+						
+					</div>
+				</div>
+				
+					<p>第三方登录</p>
+					<div class="group">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+<script type="text/javascript" src="js/cookieTools.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".content_submit").click(function(){
+					$.post("subpage3.php",{username:$("#username").val(),userpass:$("#userpass").val()},function(str){
+						if(str=="1"){
+							if($("#cookiespan").prop("checked")==true){
+								addCookie("username",$("#username").val(),7);
+								addCookie("userpass",$("#userpass").val(),7);
+								location.href="index.html";
+							}else{
+								//-------------
+								//-------------
+								//----------跳转至我的购物车
+								location.href="index.html";
+							}
+						}else{
+							$("#userspan_3").css({"color":"red"});
+							$("#userspan_3")[0].innerHTML="亲，用户名或密码输入有误";
+							}
+					});
+				
+			});
+			$("#username").focus(function(){
+				$("#userspan_3")[0].innerHTML="";
+			});
+
+			$("#userpass").focus(function(){
+				$("#userspan_3")[0].innerHTML="";
+			});
+		});
+
+	</script>

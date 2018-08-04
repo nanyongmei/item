@@ -1,0 +1,112 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" type="text/css" href="css/subpage3.css">
+</head>
+<body>
+	<div class="header">
+		<div class="header_1">
+			<div class="left">
+				<a href="http://cloud.qingchengfit.cn/">
+					<img src="img3/4.png">
+					<span>返回首页</span>
+				</a>
+			</div>
+			<div class="center">
+				<div class="center_top">
+					<div class="title">
+						<img src="img3/2.png">
+					</div>
+					<div class="content">
+						<h2>注册账户</h2>
+						<form action="subpage2.php" method="post" class="form_tj">
+							<input name="username" class="content_input" id="username" type="text" placeholder="用户名"><br/>
+							<span id="userspan" style="margin-left:15px;font-size: 12px;"></span><br/>
+							<input name="userpass" id="userpass" class="content_input" type="password" placeholder="密码">
+							<span id="userspan_2" style="margin-left:15px;font-size: 12px;"></span><br/>
+
+							<label>
+									<input class="click" type="checkbox" checked>
+									<span class="click_wz">我已阅读并接受青橙健身协议</span>
+							</label>
+							<input type="submit" id="logon" value="注册" >
+							<span id="userspan_3" style="margin-left:15px;font-size: 12px;"></span>
+						</form>						
+					</div>
+				</div>
+					<p>第三方登录</p>
+					<div class="group">
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>
+			</div> 
+		</div>
+	</div>
+</body>
+</html>
+	<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+	<script type="text/javascript">
+		true1=false;
+		true2=false;
+		$(function(){
+			//鼠标离开判断用户名是否存在、格式是否正确
+			$("#username").blur(function(){
+				var str=$("#username").val();
+				var objstr=/^[a-zA-Z]\w{5,20}$/;//判断输入的格式
+				if(objstr.test(str)){
+					$.get("subpage1.php",{username:$("#username").val()},function(str){
+						if(str=="1"){
+									$("#userspan").css({"color":"red"});
+									$("#userspan")[0].innerHTML="亲，用户名已被使用哦";
+								}else{
+									$("#userspan").css({"color":"white"});
+									$("#userspan")[0].innerHTML="亲尽快注册！防止用户名被占用哦!";
+								}
+								true1=true;
+					});
+				}else{
+					$("#userspan")[0].innerHTML="用户名格式不正确，必须是以字母开头的6-20位";
+					$("#userspan").css({"color":"red"});
+				}	
+			});
+			//修改时下面的提示取消
+			$("#username").focus(function(){
+				$("#userspan")[0].innerHTML="";
+			});
+
+
+			//判断密码格式
+			$("#userpass").blur(function(){
+				var str=$("#userpass").val();
+				var objstr=/^[a-zA-Z]\w{5,20}$/;
+				if(!objstr.test(str)){
+					$("#userspan_2")[0].innerHTML="密码格式不正确，必须是以字母开头的6-20位";
+					$("#userspan_2").css({"color":"red"});
+				}else{
+					true2=true;
+				}
+			});
+			//修改时下面的提示取消
+			$("#userpass").focus(function(){
+				$("#userspan_2")[0].innerHTML="";
+			});
+		});
+
+
+		//注册提交
+		$(".form_tj").submit(function(event){
+			if(true1==false||true2==false){//一个不满足条件都要阻止跳转
+				event.preventDefault();
+				$("#userspan_3")[0].innerHTML="用户名或密码格式不正确";
+				$("#userspan_3").css({"color":"red"});
+			}
+		});
+
+
+
+	</script>
