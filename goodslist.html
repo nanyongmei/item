@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商城</title>
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="css/goodslist.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+</head>
+<body>
+
+<!--header-->
+		<div class="header">
+			<div class="header_left">
+				<div class="header_left_img"><img src="img4/4.jpg"/></div>
+				<div class="header_left_wz">
+					<a href="index.html">首页 </a>
+					<a href="http://www.qingchengfit.cn/solution/">解决方案</a>
+					<a href="http://www.qingchengfit.cn/news/" target="_blank">活动咨询</a>
+					<a href="http://www.qingchengfit.cn/about/" target="_blank">关于我们</a>
+					<a href="shopping.html" target="_blank">商城</a>
+					<a href="goodslist.html" target="_blank">商品列表</a>
+				</div>
+			</div>
+				<div class="header_right">
+					<div class="header_img">
+						<img class="header_right_img" src="img4/1.png">
+						<img class="header_right_img2" src="img4/4.png">
+					</div>
+					<a href="subpage2.html">登录</a>/  <a href="subpage3.html">注册</a>
+					<div class="search">
+						<input type="text" id="search_1" placeholder="搜索">
+						<a href="#"><img class="search_img" src="img4/3.png"></a>
+					</div>
+					<div class="mine" >
+						<a class="mine_p" href="#"><p>我的</p></a>
+						<div class="header_mine">
+							<a href="#" style="margin-right: 0px;">购物车</a>
+							<a href="#">我的订单</a>
+							<a href="shopping.html">我的商城</a>
+							<a href="subpage2.html">登录</a>
+							<a href="subpage3.html">注册</a>
+						</div>
+					</div>	
+			</div>
+		</div>
+
+<!-- nav 上边栏-->
+		<div class="nav">
+			<div class="nav_wz">
+				<a href="shopping.html">商城首页</a>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- serve 服务	 -->	
+	<div class="serve">
+		<div class="serve_img"></div>
+	</div>
+
+
+<!-- introduce  介绍 -->
+		<div class="introduce">
+			<div class="introduce_box">
+				<div class="introduce_box_left">
+					<ul>
+						<li>关于青橙</li>
+						<li><a href="http://www.qingchengfit.cn/about/">公司简介</a></li>
+						<li><a href="http://www.qingchengfit.cn/about/#join">加入我们</a></li>
+						<li><a href="http://www.qingchengfit.cn/about/#contact">联系我们</a></li>
+					</ul>
+
+					<ul>
+						<li>青橙动态</li>
+						<li><a href="http://www.qingchengfit.cn/news/?type=story">用户故事</a></li>
+						<li><a href="http://www.qingchengfit.cn/news/?type=news">行业资讯</a></li>
+						<li><a href="http://www.qingchengfit.cn/news/?type=activity">赛事活动</a></li>
+						<li><a href="http://www.qingchengfit.cn/news/?type=update">产品更新</a></li>
+
+					</ul>
+
+					<ul>
+						<li>青橙工具</li>
+						<li><a href="http://www.qingchengfit.cn/trial/">下载移动APP</a></li>
+					</ul>
+					<ul>
+						<li>Q & A</li>
+						<li><a href="http://www.qingchengfit.cn/faq/">常见问题</a></li>
+					</ul>
+				</div>
+				<div class="introduce_box_right">
+					<a href="http://www.qingchengfit.cn/">
+						<img src="img1/4.jpg">
+					</a>
+					<ul>
+						<li> 客服联系：service@qingcheng.it</li>
+						<li>合作联系：info@qingcheng.it</li>
+						<li>工作时间：周一至周五 10:00-19:00</li>
+					</ul>
+					<div class="hide_box">
+					</div>	
+					<div class="introduce_box_right2">
+						<a class="introduce_a" href="#"><img src="img1/12.jpg"/></a>
+						<a class="introduce_a" href="https://weibo.com/qingchengfitness?"><img src="img1/13.jpg"/> </a>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+<!-- bottom 底部 -->
+		<div class="bottom_box">
+			<p>©2016 - 2018 北京青橙信息技术有限公司 京ICP备14045334号-1 京公网安备11010502027182</p>
+		</div>
+	
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		//搜索框出现隐藏
+		$(".header_right_img").click(function(){
+			
+			$(".header_right_img2").css({"display":"block"});
+			$(".header_right_img").css({"display":"none"});
+			$(".search").fadeIn();
+		});
+		$(".header_right_img2").click(function(){
+			$(".header_right_img2").css({"display":"none"});
+			$(".header_right_img").css({"display":"block"});
+			$(".search").css({"display":"none"});
+		});
+
+		$("#search_1").blur(function(){
+			$(this)[0].value="";
+		});
+
+		$(".mine").mouseenter(function(){
+			$(".header_mine").fadeIn();
+		});
+		$(".mine").mouseleave(function(){
+			$(".header_mine").css({
+				"display":"none"
+			});
+		});
+
+
+
+	});
+
+
+
+
+
+
+
+			
+</script>		

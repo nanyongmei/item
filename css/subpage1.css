@@ -14,40 +14,135 @@
 /* header */
 	.header{
 		width:100%;
-		height:800px;
+		height:665px;
 		background: url(../img2/5.png);
-		background-size: 100% 800px;
-		position: absolute;
+		background-size: 100% 665px;
 	}
 	.header_top{
 		width:100%;
 		height:180px;
 	}
 	.header_top p:nth-child(1){
-		margin:30px 750px auto 89px ;
-		font-size: 44px;
+		margin:15px 650px auto 89px ;
+		font-size: 30px;
 		color:white;
 		float:left;
 		font-weight: 900;
 	}
 	.header_top p:nth-child(2){
-		font-size: 22px;
-		margin-right: 27px;
+		font-size: 16px;
+		margin-right: 36px;
 		color:#0ed7be;
 		float:left;
-		margin-top: 45px;
+		margin-top: 30px;
 	}
 	
 	.header_top span{
-		width:330px;
-		height:50px;
+		width:230px;
+		height:40px;
 		background: #00e9cf;
-		border-radius: 5px;
-		font-size: 22px;
+		border-radius: 3px;
+		font-size: 16px;
 		color: white;
 		text-align: center;
 		display: block;
 		float: left;
-		margin-top: 40px;
-		line-height: 50px;
+		margin-top: 25px;
+		line-height: 40px;
 	}
+
+.header_bottom{
+	padding-top: 20px;
+}
+.header_bottom p{
+	margin-left:89px;
+	font-size: 32px;
+	color:white;
+	line-height: 55px;
+}
+.header_bottom span{
+	width:230px;
+	height:40px;
+	background: white;
+	border-radius: 3px;
+	font-size: 16px;
+	color: #52eccd;
+	text-align: center;
+	display: block;
+	float: left;
+	margin-top: 29px;
+	line-height: 40px;
+	margin-left: 89px;
+}
+
+/* introuduce */
+.introduce{
+	width:100%;
+	height:800px;
+}
+.introduce_content{
+	padding-top: 200px;
+	width: 650px;
+	height:463px;
+	margin:0 auto;
+}
+.introduce_content_top{
+	height: 132px;
+	width: 650px;
+}
+.introduce_content_top p:nth-child(1){
+	font-size: 26px;
+	text-align: center;
+	color:#333333;
+	line-height: 55px;
+}
+.introduce_content_top img{
+	margin-left: 293px;
+}
+.introduce_content_top p:nth-child(3){
+	font-size:16px;
+	text-align: center;
+	color:#7f7f7f;
+	margin-top: 15px;
+}
+.introduce_content_bottom{
+	height: 332px;
+	width: 650px;
+	background: url(../img2/2.png);
+	background-size: cover;
+}
+
+/* ID recognize 智能身份识别 */ 
+.recognize{
+	width:100%;
+	height:700px;
+	background: blue;
+}
+.recognize_left{
+	width:673px ;
+	height: 700px;
+	background: url(../img2/3.png);
+	background-size: cover;
+	float: left;
+}
+.recognize_right{
+	width: 324px;
+	height:318px;
+	background:pink;
+	float:left;
+	margin-top: 194px;
+	margin-left: 93px;
+}
+.recognize_right_wz p:nth-child(1){
+	font-size: 26px;
+	color: #333333;
+	line-height: 50px;
+}
+.recognize_right_wz img:nth-child(2){
+	margin-top: 8px;
+}
+.recognize_right_wz p{
+	font-size: 16px;
+	color: #7f7f7f;
+	line-height: 26px;
+}

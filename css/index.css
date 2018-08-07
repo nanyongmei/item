@@ -42,13 +42,13 @@
 		font-size:14px;
 		color:#757575;
 		line-height: 64px;
-		margin-left:33px;
+		margin-left:20px;
 	}
 	.header_left_wz a:nth-child(1){
 		color:#292929;
 		font-weight:900 ;
 	}
-	.header_left_wz a:nth-child(4){
+	.header_left_wz a:nth-child(5){
 		margin-right:33px;
 	}
 	.header_right{
