@@ -27,7 +27,6 @@
 						<img class="header_right_img" src="img4/1.png">
 						<img class="header_right_img2" src="img4/4.png">
 					</div>
-					<a href="subpage2.html">登录</a>/  <a href="subpage3.html">注册</a>
 					<div class="search">
 						<input type="text" id="search_1" placeholder="搜索">
 						<a href="#"><img class="search_img" src="img4/3.png"></a>
@@ -46,27 +45,67 @@
 		</div>
 
 <!-- nav 上边栏-->
-		<div class="nav">
-			<div class="nav_wz">
-				<a href="shopping.html">商城首页</a>
+			<div class="nav">
+				<div class="nav_wz">
+					<a href="shopping.html">商城首页</a>   >
+					<a href="#">家用器材</a>   >
+					<a href="#">商用器材</a>
+				</div>
+			</div>
+
+<!-- subfield 分栏-->
+			<div class="subfield">
+				<div class="subfield_content">
+					<div class="subfield_content_top">
+						<a href="#">家用器材</a>
+						<a href="#">配套产品</a>
+						<a href="#">服务</a>
+					</div>
+					<div class="subfield_content_bottom">
+						<a href="#">全部</a>
+						<a href="#">健身器材</a>
+					</div>
+				</div>
+			</div>
+
+<!-- list  商品列表 -->
+
+			<div class="list">
+				<div class="list_content">
+					
+
+
+				<!-- 	<div class="product_right_top1">
+					<a href="#">
+						<img class=".product_right_top1_1" src="img4/7.jpg">
+						<div class="product_right_top1_2">
+							<h3>美国爱康ICON跑步机19716</h3>
+							<p>￥13269</p>
+						</div>
+					</a>
+				</div> -->
+
+
+				</div>
+			</div>
+
+
+
+
+<!-- 分页  pagging -->
+		<div class="pagging">
+			<div class="pagging_content">
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">下一页</a>
+				<span>共2页,跳转至</span>
+				<input class="pagging_input" type="text">
+				<span>页</span>
+				<a href="#">确定</a>
 			</div>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- serve 服务	 -->	
+<!-- serve 服务 -->	
 	<div class="serve">
 		<div class="serve_img"></div>
 	</div>
@@ -156,7 +195,21 @@
 			});
 		});
 
+		//获取后端数据
+		
+		$.get("php/getGoodsList.php",function(str){
+			var htmlStr="";
+			var arr=JSON.parse(str);
+			for(var i=0;i<arr.length;i++){
+				htmlStr+='<div class="product_right_top1"><a href="#"><img class="product_right_top1_1" src="'+arr[i].beiyong11+'">'+'<div class="product_right_top1_2">'+'<h3>'+arr[i].goodsName+'</h3>'+'<p>'+'￥'+arr[i].goodsPrice+'</p>'+'</div>'+'</a>'+'</div>';
+			}
+			$(".list_content").html(htmlStr);
+		});
 
+		
+		
+		
+		
 
 	});
 
@@ -165,6 +218,28 @@
 
 
 
+	//introduce  介绍   文字变色
+		$(".introduce_box_left ul li").mouseover(function(){
+			$(this).children().css("color","#00dce6");
+		});
+		$(".introduce_box_left ul li").mouseout(function(){
+			$(this).children().css("color","#5a5d64");
+		});
 
+		//二维码显示隐藏
+		$(".introduce_a:first-child").mouseover(function(){
+			$(".hide_box").fadeIn(400);
+		});
+		$(".introduce_a").mouseout(function(){
+			$(".hide_box").fadeOut(400);
+		});
+
+
+
+
+
+
+
+		
 			
 </script>		
