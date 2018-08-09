@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>商城</title>
 	<title></title>
-		<link rel="stylesheet" type="text/css" href="css/goodslist.css">
+		<link rel="stylesheet" type="text/css" href="css/details.css">
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css">
 </head>
 <body>
@@ -19,28 +19,28 @@
 					<a href="http://www.qingchengfit.cn/news/" target="_blank">活动咨询</a>
 					<a href="http://www.qingchengfit.cn/about/" target="_blank">关于我们</a>
 					<a href="shopping.html" target="_blank">商城</a>
-					<a href="goodslist.html" target="_blank">商品列表</a>
+					<a href="goodslist.html" target="_blank">商品详情</a>
 				</div>
 			</div>
-				<div class="header_right">
-					<div class="header_img">
-						<img class="header_right_img" src="img4/1.png">
-						<img class="header_right_img2" src="img4/4.png">
+			<div class="header_right">
+				<div class="header_img">
+					<img class="header_right_img" src="img4/1.png">
+					<img class="header_right_img2" src="img4/4.png">
+				</div>
+				<div class="search">
+					<input type="text" id="search_1" placeholder="搜索">
+					<a href="#"><img class="search_img" src="img4/3.png"></a>
+				</div>
+				<div class="mine" >
+					<a class="mine_p" href="#"><p>我的</p></a>
+					<div class="header_mine">
+						<a href="#" style="margin-right: 0px;">购物车</a>
+						<a href="#">我的订单</a>
+						<a href="shopping.html">我的商城</a>
+						<a href="subpage2.html">登录</a>
+						<a href="subpage3.html">注册</a>
 					</div>
-					<div class="search">
-						<input type="text" id="search_1" placeholder="搜索">
-						<a href="#"><img class="search_img" src="img4/3.png"></a>
-					</div>
-					<div class="mine" >
-						<a class="mine_p" href="#"><p>我的</p></a>
-						<div class="header_mine">
-							<a href="#" style="margin-right: 0px;">购物车</a>
-							<a href="#">我的订单</a>
-							<a href="shopping.html">我的商城</a>
-							<a href="subpage2.html">登录</a>
-							<a href="subpage3.html">注册</a>
-						</div>
-					</div>	
+				</div>	
 			</div>
 		</div>
 
@@ -53,39 +53,42 @@
 				</div>
 			</div>
 
-<!-- subfield 分栏-->
-			<div class="subfield">
-				<div class="subfield_content">
-					<div class="subfield_content_top">
-						<a href="#">家用器材</a>
-						<a href="#">配套产品</a>
-						<a href="#">服务</a>
+<!-- content 主题 -->
+		<div class="content">
+			<div class="content_1">
+				<div class="content_left">
+					<div class="content_left_top">
+						<img src="img5/001.jpg">
 					</div>
-					<div class="subfield_content_bottom">
-						<a href="#">全部</a>
-						<a href="#">健身器材</a>
+					<div class="content_left_bottom">
+						<img src="img5/001.jpg">
+						<img src="img5/0011.jpg">
+						<img src="img5/0012.jpg">
+						<img src="img5/0013.jpg">
 					</div>
 				</div>
-			</div>
-
-<!-- list  商品列表 -->
-
-			<div class="list">
-				<div class="list_content">
+				<div class="content_right">
+					<h3>HARISON 跑步机 MONICA T1</h3>
+					<p>¥2,999.00</p>
+					<h4>简介：</h4>
+					<ul>
+						<li>HARISON 跑步机 MONICA T1是一款简约主义小而美、颜值高的跑步机。它配置了</li>
+						<li>1.分段式减震，保护膝盖</li>
+						<li>2.120*45CM大空间的有效跑步面积</li>
+						<li>3.免安装，能折叠，更省空间</li>
+						<li>4.绿色环保马达</li>
+					</ul>
+					<div class="number">
+						<input type="number">
+						<a href="#"><span>加入购物车</span></a>
+					</div>
+					<h6>分类： <a href="#">家用跑步机, 美国HARISON</a></h6>
 				</div>
+		
 			</div>
-<!-- 分页  pagging -->
-		<div class="pagging">
-			<div class="pagging_content">
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">下一页</a>
-				<span>共2页,跳转至</span>
-				<input class="pagging_input" type="text">
-				<span>页</span>
-				<a href="#">确定</a>
-			</div>
+
 		</div>
+
 
 <!-- serve 服务 -->	
 	<div class="serve">
@@ -190,8 +193,51 @@
 			$(".list_content").html(htmlStr);
 		});
 
+		
+		
+		
+		
 
 	});
+
+
+<div class="content_left">
+					<div class="content_left_top">
+						<img src="img5/001.jpg">
+					</div>
+					<div class="content_left_bottom">
+						<img src="img5/001.jpg">
+						<img src="img5/0011.jpg">
+						<img src="img5/0012.jpg">
+						<img src="img5/0013.jpg">
+					</div>
+				</div>
+				<div class="content_right">
+					<h3>HARISON 跑步机 MONICA T1</h3>
+					<p>¥2,999.00</p>
+					<h4>简介：</h4>
+					<ul>
+						<li>HARISON 跑步机 MONICA T1是一款简约主义小而美、颜值高的跑步机。它配置了</li>
+						<li>1.分段式减震，保护膝盖</li>
+						<li>2.120*45CM大空间的有效跑步面积</li>
+						<li>3.免安装，能折叠，更省空间</li>
+						<li>4.绿色环保马达</li>
+					</ul>
+					<div class="number">
+						<input type="number">
+						<a href="#"><span>加入购物车</span></a>
+					</div>
+					<h6>分类： <a href="#">家用跑步机, 美国HARISON</a></h6>
+				</div>
+
+
+
+
+
+
+
+
+
 
 
 
