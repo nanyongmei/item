@@ -75,7 +75,7 @@
 					
 
 
-				<!-- 	<div class="product_right_top1">
+				<!--<div class="product_right_top1">
 					<a href="#">
 						<img class=".product_right_top1_1" src="img4/7.jpg">
 						<div class="product_right_top1_2">
@@ -201,7 +201,9 @@
 			var htmlStr="";
 			var arr=JSON.parse(str);
 			for(var i=0;i<arr.length;i++){
-				htmlStr+='<div class="product_right_top1"><a href="#"><img class="product_right_top1_1" src="'+arr[i].beiyong11+'">'+'<div class="product_right_top1_2">'+'<h3>'+arr[i].goodsName+'</h3>'+'<p>'+'￥'+arr[i].goodsPrice+'</p>'+'</div>'+'</a>'+'</div>';
+				htmlStr+='<div class="product_right_top1"><a href="#"><img class="product_right_top1_1" src="'+
+				arr[i].goodsImg+'">'+'<div class="product_right_top1_2">'+'<h3>'+arr[i].goodsName
+				+'</h3>'+'<p>'+'￥'+arr[i].goodsPrice+'</p>'+'</div>'+'</a>'+'</div>';
 			}
 			$(".list_content").html(htmlStr);
 		});
