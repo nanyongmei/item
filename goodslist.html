@@ -145,7 +145,7 @@
 		<div class="bottom_box">
 			<p>©2016 - 2018 北京青橙信息技术有限公司 京ICP备14045334号-1 京公网安备11010502027182</p>
 		</div>
-	
+		
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
@@ -183,7 +183,7 @@
 			var htmlStr="";
 			var arr=JSON.parse(str);
 			for(var i=0;i<arr.length;i++){
-				htmlStr+='<div class="product_right_top1"><a href="#"><img class="product_right_top1_1" src="'+
+				htmlStr+='<div class="product_right_top1"><a href="details.html?'+arr[i].goodsId+'"><img class="product_right_top1_1" src="'+
 				arr[i].goodsImg+'">'+'<div class="product_right_top1_2">'+'<h3>'+arr[i].goodsName
 				+'</h3>'+'<p>'+'￥'+arr[i].goodsPrice+'</p>'+'</div>'+'</a>'+'</div>';
 			}

@@ -57,7 +57,7 @@
 		<div class="content">
 			<div class="content_1">
 				<div class="content_left">
-					<div class="content_left_top">
+					<!-- <div class="content_left_top">
 						<img src="img5/001.jpg">
 					</div>
 					<div class="content_left_bottom">
@@ -65,10 +65,10 @@
 						<img src="img5/0011.jpg">
 						<img src="img5/0012.jpg">
 						<img src="img5/0013.jpg">
-					</div>
+					</div> -->
 				</div>
 				<div class="content_right">
-					<h3>HARISON 跑步机 MONICA T1</h3>
+					<!-- <h3>HARISON 跑步机 MONICA T1</h3>
 					<p>¥2,999.00</p>
 					<h4>简介：</h4>
 					<ul>
@@ -79,14 +79,16 @@
 						<li>4.绿色环保马达</li>
 					</ul>
 					<div class="number">
-						<input type="number">
-						<a href="#"><span>加入购物车</span></a>
+						<div class="number_left">
+							<input type="button" value="-">
+							<span>1</span>
+							<input type="button" value="+">
+						</div>
+						<span class="number_span">加入购物车</span>
 					</div>
-					<h6>分类： <a href="#">家用跑步机, 美国HARISON</a></h6>
+					<h6>分类： <a href="#">家用跑步机, 美国HARISON</a></h6> -->
 				</div>
-		
 			</div>
-
 		</div>
 
 
@@ -180,29 +182,47 @@
 			});
 		});
 
-		//获取后端数据
-		
-		$.get("php/getGoodsList.php",function(str){
-			var htmlStr="";
-			var arr=JSON.parse(str);
-			for(var i=0;i<arr.length;i++){
-				htmlStr+='<div class="product_right_top1"><a href="#"><img class="product_right_top1_1" src="'+
-				arr[i].goodsImg+'">'+'<div class="product_right_top1_2">'+'<h3>'+arr[i].goodsName
-				+'</h3>'+'<p>'+'￥'+arr[i].goodsPrice+'</p>'+'</div>'+'</a>'+'</div>';
-			}
-			$(".list_content").html(htmlStr);
-		});
 
-		
-		
-		
-		
+		//截取网址字符串中的id
+		var str1=window.location.href;
+		var str2=str1.split("?")[1];
+		//获取后端数据(返回的数据是一个对象)
+
+		$.get("php/getGoodsInfo.php",{goodsId:str2},function(str){
+			var htmlStr="";
+			var obj=JSON.parse(str);
+			htmlStr+='<div class="content_left_top"><img src="'+obj.goodsImg+'"></div><div class="content_left_bottom"><img src="'+obj.goodsImg+'"><img src="'+obj.beiyong9+'"><img src="'+obj.beiyong10+'"><img src="'+obj.beiyong8+'">'+'</div>';
+			$(".content_left").html(htmlStr);
+
+
+
+			var htmlStr2="";
+			htmlStr2+='<h3>'+obj.goodsName+'</h3>';
+			htmlStr2+='<p>￥'+obj.goodsPrice+'</p>';
+			htmlStr2+='<h4>'+obj.beiyong1+'</h4><ul>';
+			htmlStr2+='<li>'+obj.beiyong2+'</li>';
+			htmlStr2+='<li>'+obj.beiyong3+'</li>';
+			htmlStr2+='<li>'+obj.beiyong4+'</li>';
+			htmlStr2+='<li>'+obj.beiyong5+'</li>';
+			htmlStr2+='<li>'+obj.beiyong6+'</li>';
+			htmlStr2+='<li>'+obj.beiyong7+'</li></ul>';
+			htmlStr2+='<div class="number"><div class="number_left"><input type="button" value="-"><span>1</span><input type="button" value="+"></div><span class="number_span">加入购物车</span></div><h6>分类： <a href="#">'+obj.beiyong11+'</a></h6>';
+			$(".content_right").html(htmlStr2);
+		});
 
 	});
 
 
-<div class="content_left">
-					<div class="content_left_top">
+
+		//添加点击事件 让图片更换
+		$(".content_left_bottom").children("img").click(function(){
+			$(".content_left_top").children("img").attr(src,$(this).attr("src"));
+		});
+
+			
+
+			/*<div class="content_left">
+					<!-- <div class="content_left_top">
 						<img src="img5/001.jpg">
 					</div>
 					<div class="content_left_bottom">
@@ -210,29 +230,9 @@
 						<img src="img5/0011.jpg">
 						<img src="img5/0012.jpg">
 						<img src="img5/0013.jpg">
-					</div>
+					</div> -->
 				</div>
-				<div class="content_right">
-					<h3>HARISON 跑步机 MONICA T1</h3>
-					<p>¥2,999.00</p>
-					<h4>简介：</h4>
-					<ul>
-						<li>HARISON 跑步机 MONICA T1是一款简约主义小而美、颜值高的跑步机。它配置了</li>
-						<li>1.分段式减震，保护膝盖</li>
-						<li>2.120*45CM大空间的有效跑步面积</li>
-						<li>3.免安装，能折叠，更省空间</li>
-						<li>4.绿色环保马达</li>
-					</ul>
-					<div class="number">
-						<input type="number">
-						<a href="#"><span>加入购物车</span></a>
-					</div>
-					<h6>分类： <a href="#">家用跑步机, 美国HARISON</a></h6>
-				</div>
-
-
-
-
+*/
 
 
 
@@ -261,9 +261,25 @@
 		});
 
 
-
-
-
+/*
+		//截取url中的字符串
+		function queryToJson(str){
+			//1、先拿出？后面的字符串
+			let query = str.split("?")[1];//a=1&b=2&c=&d=xxx&e 
+			
+			//2、用&分割
+			let arr = query.split("&");
+			let obj={};
+			for(let index in arr){
+				let tempArr = arr[index].split("="); //item = "a=1"
+				if(tempArr.length==2){
+					obj[tempArr[0]] = tempArr[1];	
+				}else{
+					obj[tempArr[0]] = undefined;			
+				}
+			}
+			return obj;
+		}*/
 
 
 		
